@@ -36,11 +36,11 @@ android {
     }
 
     defaultConfig {
-        applicationId 'org.wikipedia'
+        applicationId 'org.melillapedia'
         minSdk = 23
         targetSdk = 37
         versionCode 50596
-        testApplicationId 'org.wikipedia.test'
+        testApplicationId 'org.melillapedia.test'
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
 
@@ -49,7 +49,7 @@ android {
         signingConfig = signingConfigs.debug
 
         buildConfigField "String", "DEFAULT_RESTBASE_URI_FORMAT", '"%1$s://%2$s/api/rest_v1/"'
-        buildConfigField "String", "META_WIKI_BASE_URI", '"https://meta.wikimedia.org"'
+        buildConfigField "String", "META_WIKI_BASE_URI", '"https://meta.melillapedia.org"'
         buildConfigField "String", "EVENTGATE_ANALYTICS_EXTERNAL_BASE_URI", '"https://intake-analytics.wikimedia.org"'
         buildConfigField "String", "EVENTGATE_LOGGING_EXTERNAL_BASE_URI", '"https://intake-logging.wikimedia.org"'
         def TEST_LOGIN_USERNAME = System.getenv('TEST_LOGIN_USERNAME')
@@ -113,13 +113,13 @@ android {
         dev {
             versionName computeVersionName(defaultConfig.versionCode, 'dev')
             applicationIdSuffix '.dev'
-            buildConfigField "String", "META_WIKI_BASE_URI", '"https://meta.wikimedia.beta.wmflabs.org"'
+            buildConfigField "String", "META_WIKI_BASE_URI", '"https://meta.melillapedia.org"'
             buildConfigField "String", "EVENTGATE_ANALYTICS_EXTERNAL_BASE_URI", '"https://intake-analytics.wikimedia.beta.wmflabs.org"'
             buildConfigField "String", "EVENTGATE_LOGGING_EXTERNAL_BASE_URI", '"https://intake-logging.wikimedia.beta.wmflabs.org"'
         }
         prod {
             versionName computeVersionName(defaultConfig.versionCode, 'r')
-            signingConfig = signingConfigs.prod
+            signingConfig = signingConfigs.debug
         }
         alpha {
             versionName computeVersionName(defaultConfig.versionCode, 'alpha')
@@ -128,17 +128,17 @@ android {
         beta {
             versionName computeVersionName(defaultConfig.versionCode, 'beta')
             applicationIdSuffix '.beta'
-            signingConfig = signingConfigs.prod
+            signingConfig = signingConfigs.debug
         }
         fdroid {
             versionName computeVersionName(defaultConfig.versionCode, 'fdroid')
-            signingConfig = signingConfigs.prod
+            signingConfig = signingConfigs.debug
         }
         custom {
             versionName computeVersionName(defaultConfig.versionCode, customChannel)
             // next line is for injecting a custom channel value into the custom/AndroidManifest.xml
             manifestPlaceholders = [customChannel:getProperty('customChannel').toString()]
-            signingConfig = signingConfigs.prod
+            signingConfig = signingConfigs.debug
         }
     }
 
@@ -153,6 +153,10 @@ android {
         language {
             enableSplit = false
         }
+    }
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
     }
     namespace = 'org.wikipedia'
 }

@@ -771,11 +771,11 @@ interface Service {
 
     companion object {
         const val WIKIPEDIA_URL = "https://${WikiSite.BASE_DOMAIN}/"
-        const val BASE_AUTHORITY_WIKIMEDIA = "wikimedia.org"
+        const val BASE_AUTHORITY_WIKIMEDIA = "melillapedia.org"
         const val WIKIMEDIA_URL = "https://${BASE_AUTHORITY_WIKIMEDIA}/"
-        const val BASE_AUTHORITY_WIKIDATA = "wikidata.org"
-        const val WIKIDATA_URL = "https://www.${BASE_AUTHORITY_WIKIDATA}/"
-        const val COMMONS_URL = "https://commons.wikimedia.org/"
+        const val BASE_AUTHORITY_WIKIDATA = "melillapedia.org"
+        const val WIKIDATA_URL = "https://data.${BASE_AUTHORITY_WIKIDATA}/"
+        const val COMMONS_URL = "https://commons.melillapedia.org/"
         const val URL_FRAGMENT_FROM_COMMONS = "/wikipedia/commons/"
         const val MW_API_PREFIX = "w/api.php?format=json&formatversion=2&errorformat=html&errorsuselocal=1&"
         const val PREFERRED_THUMB_SIZE = 330

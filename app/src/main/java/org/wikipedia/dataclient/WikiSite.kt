@@ -134,7 +134,7 @@ data class WikiSite(
 
     companion object {
         const val DEFAULT_SCHEME = "https"
-        const val BASE_DOMAIN = "wikipedia.org"
+        const val BASE_DOMAIN = "melillapedia.org"
         private var DEFAULT_BASE_URL: String? = null
 
         fun supportedAuthority(authority: String): Boolean {
@@ -168,7 +168,7 @@ data class WikiSite(
          * logic that depends on a WikipediaApp instance.
          */
         fun preview(languageCode: String = "en"): WikiSite {
-            return WikiSite("https://$languageCode.wikipedia.org/".toUri(), languageCode)
+            return WikiSite("https://$languageCode.melillapedia.org/".toUri(), languageCode)
         }
 
         private fun languageCodeToSubdomain(languageCode: String): String {

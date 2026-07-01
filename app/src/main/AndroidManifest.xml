@@ -105,8 +105,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="wikipedia" />
-                <data android:host="*.wikipedia.org" />
+                <data android:scheme="melillapedia" />
+                <data android:host="*.melillapedia.org" />
                 <!-- Add more deeplink hosts as needed -->
             </intent-filter>
         </activity-alias>
@@ -125,8 +125,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="wikipedia" />
-                <data android:host="*.wikipedia.org" />
+                <data android:scheme="melillapedia" />
+                <data android:host="*.melillapedia.org" />
                 <!-- Add more deeplink hosts as needed -->
             </intent-filter>
         </activity-alias>
@@ -152,9 +152,9 @@
                      so http and https apply to all prefixes-->
                 <data android:scheme="http" />
                 <data android:scheme="https" />
-                <data android:host="*.wikipedia.org" android:pathPrefix="/wiki/" />
-                <data android:host="*.wikipedia.org" android:pathPattern="/zh.*" />
-                <data android:host="*.wikipedia.org" android:pathPattern="/sr.*" />
+                <data android:host="*.melillapedia.org" android:pathPrefix="/wiki/" />
+                <data android:host="*.melillapedia.org" android:pathPattern="/zh.*" />
+                <data android:host="*.melillapedia.org" android:pathPattern="/sr.*" />
             </intent-filter>
         </activity>
         <activity
